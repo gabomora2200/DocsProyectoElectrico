@@ -1,15 +1,15 @@
-.. IE0417 documentation master file
+.. Documentation master file
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Bienvenido al curso IE0417 @ EIE, UCR!
-======================================
+Bienvenido al ambiente de documentación del laboratorio @ EIE, UCR!
+===================================================================
 
-Esta documentación describe el ambiente de desarrollo base para el curso IE0417
+Esta documentación describe el ambiente de desarrollo base para el laboratorio de protecciones eléctricas
 de la Escuela de Ingeniería Eléctrica, Universidad de Costa Rica (UCR).
 
 Este ambiente busca aprovechar componentes Open Source para mejorar el desarrollo
-de proyectos de software. Este repositorio y documentación proveen un ejemplo
+de proyectos de software y la creación de documentación para los mismos. Este repositorio y documentación proveen un ejemplo
 funcional de múltiples tecnologías:
 
 - Un ambiente de desarrollo reproducible basado en Vagrant y Docker
@@ -21,12 +21,4 @@ funcional de múltiples tecnologías:
    :caption: Contenidos
 
    getting-started
-   labs/labs
-
-
-Indices y tablas
-================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   atvise/atvise

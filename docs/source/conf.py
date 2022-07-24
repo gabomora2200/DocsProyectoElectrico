@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'IE0417'
+project = 'EPERLAB'
 copyright = '2022, Universidad de Costa Rica.'
 author = 'Esteban Zamora'
 
