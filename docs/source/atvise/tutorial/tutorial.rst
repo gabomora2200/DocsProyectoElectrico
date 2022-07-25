@@ -240,8 +240,144 @@ En esta sección se crean instancias del tipo de objeto creado anteriormente.
 
 .. image:: img/instance.PNG
 
+Agregando un display a un objeto
+================================
+En esta sección se ve cómo agregar un display a un objeto.
+
+Agregando un display a un tipo
+------------------------------
+
+1. Dar click derecho al tipo ``Light`` creado en la sección anterior y seleccione ``Add display``.
+2. Escriba un nombre como ``Main Display`` y agreguelo al objeto y dele ``OK``.
+
+.. image:: img/objectDisplay.PNG
+
+.. hint::
+  Si se le da click al nuevo display y se abre el menú de ``ModellingRule``, usted verá que aparece un check en un anuncio que se llama ``Shared``. Esto significa que el display del tipo asociado está referenciado a cada uno de las instancias de los objetos creados con anterioridad. El display se ve y se comporta de igual manera para cada uno de los objetos, por lo que no hace falta crear un display para cada instancia.
+
+Diseñando un display para el objeto
+-----------------------------------
+
+Creando un fondo para el display
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. De doble click al ``Main Display`` para abrir el editor gráfico.
+2. Ahora dibuje un fondo para el objeto en cuestión. Primero haga un rectángulo del tamaño que quiera.
+3. Para el fondo se quiere un relleno en forma de gradiente, entonces marque el rectángulo y haga click en la opción de ``fill`` debajo del dibujo.
+4. Es posible cambiar el color del gradiente, haciendo doble click en los pequeños triángulos debajo de la barra del gradiente. 
+5. Cambie el ángulo del gradiente, para esto mueva los circulos rojos. 
+6. Cuango haya terminado el diseño haga click en ``File -> settings``.
+7. Haga click en el botón de ``Fit`` para ajustar el fondo.
+
+.. image:: img/background.PNG
+
+Añadiendo historia al proyecto
+==============================
 
 
+Configurando la historia de las variables de datos
+--------------------------------------------------
+
+1. Abra la lista de objetos creados haciendo click en ``Object Types`` en la barra del lado izquiero del constructor de atvise.
+2. Abra la estructura de archivosde del objeto ``Light`` creado con anterioridad y de click derecho en ``COMMANDS -> Light Intensity``.
+3. Escoja la opción de ``Historize`` del menú que se le desplegó del punto anterior y seleccione la opción de ``datavalues`` bajo lo que dice ``Raw Archive``.
+4. Repita lo mismo para la variable ``SIGNALS -> LightIntensity``.
+
+.. image:: img/hist.PNG
+
+Mostrando la historia en la ventana de visualización
+----------------------------------------------------
+
+1. Abra el display de ``Office_Light`` que se creó con anterioridad.
+2. Cambie el parámetro de ``LightIntensity`` para varios cuartos.
+3. Ahora haga click en el símbolo de historia en el panel de control para ver como cambian los valores. 
 
 
+.. image:: img/hist2.PNG
 
+Agregando alarmas al proyecto
+=============================
+
+configuración de una alarma
+---------------------------
+1. Abra la lista de objetos dando click a la opción de "Object Types" del lado izquierdo de la interfaz del constructor de atvise.
+2. De click derecho en la variable de datos ``Light -> ALARMS -> InternalMalfunction``.
+3. Escoja ``Add AlarmConfiguration`` del menú que se le despliega.
+4. Escriba el nombre que le quiera dar a la configuración alarma.
+5. Observe como aparece en la lista de opciones ``LightMalfunction`` debajo de la variable.
+6. Como primer paso seleccione la opción de ``OfficeLight`` usando el botón que tiene tres puntos (...).
+7. Ahora se debe definir una condición. Escriba ``light malfunction`` como el nombre de la condición y ``Warning: the lights went down`` en la casilla de ``To Active Text``. Por último ingrese ``true`` en la vasilla de ``Value``.
+8. Acepte los cambios en la configuración de la alarma y guardelos.
+
+.. image:: img/alarm.PNG
+
+.. hint:: 
+  Después de aplicar los cambios a la configuración de la alarma, la misma es heredada por todas las instancias de la alarma.
+
+Mostrando la instancia de la alarma
+-----------------------------------
+En la sección anterior se logró configurar una alarma, sin embargo; la misma no se puede ver, por lo que en esta sección se configura el display para que muestre la alarma.
+
+Añadiendo un borde al objeto de la alarma
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Abra el display del objeto, para esto haga doble click en la opción ``Object Types -> Light -> Main Display``.
+2. Dibuje un rectángulo alrededor del display del objeto.
+3. Seleccione ``None`` en la casilla de ``fill``.
+4. Escoja un tamaño apropiado para el dibujo.
+
+.. image:: img/drawing.PNG
+
+Mostrando los estados de alarma en el display
+---------------------------------------------
+
+1. Navegue a ``My Server -> OBJECTS`` en la parte izquierda del constructor de atvise y active la opción de ``InternalMalfunction`` para una de las cinco alarmas.
+2. Cargue el display ``Office_Light`` en la ventana de visualización y observe como el estado se muestra. 
+3. Desactive la alarma cambiando el valor de la variable de datos a ``false``. 
+4. Vuelva a la venta de visualización y haga click en el símbolo de la alarma en el panel de control para desplegar la lista de todas las alarmas registradas con el sistema.
+5. De click en la opción de ``ACKNOWLEDGE``.
+6. Repita el proceso anterior, activando y desactivando las alarmas. 
+
+.. image:: img/alarmck.PNG
+
+
+Añadiendo permisos de usuario al proyecto
+=========================================
+
+1. Abra la ventana de ``Users & Groups`` dando click al icono de users del lado izquierdo del constructor de atvise.
+2. Ahora abra la venta de ``Rights`` y de click en ``Userdefined rights``. 
+3. Escoja ``Add right`` del menú que aparece. 
+4. En la casilla que aparece, usted puede escribir el nombre que quiera, como ejemplo ``change_light_intensity`` y de click en ``OK``.
+
+.. image:: img/rights.PNG
+
+Añadiendo un grupo al proyecto
+------------------------------
+
+1. De click derecho en el folder de ``Groups``.
+2. Escoja ``Add group`` del menú que aparece.
+3. Ponga el nombre de ``Administrators`` en la casilla que aparece.
+4. De doble click en el folder de ``Group Editor``.
+5. Escriba una descripción, como por ejemplo ``Group of Administrators``.
+6. Ponga un Check en la opción de ``USER - Change_light_intensity`` en la casilla de ``Rights List`` en el fondo de la pantalla.
+
+.. image:: img/user2.PNG
+
+Añadiendo un usuario al grupo
+-----------------------------
+
+1. Se puede añadir usuarios directamente a un grupo. Para hacer esto de click derecho en la casilla de ``Administrators``.
+2. Escoja ``Add new user`` del menú que aparece.
+3. Ponga el nombre al usuario ``admin1``.
+
+.. image:: img/usuario.PNG
+
+4. Nueva información aparece debajo del folder de ``Administratirs``. De doble click para abrir el editor de usuarios.
+5. Escriba un nombre, descripción y lenguaje. 
+6. De click en ``Set Password`` y ponga la clave de su elección.
+7. Active el ``Project Administrator`` y opciones de ``Visualization`` para el usuario.
+8. Guarde la configuración.
+
+.. image:: img/usergroup.PNG
+
+9. Después revise la pestaña de ``Administrators`` y observe el nuevo usuario en la lista de usuarios.
